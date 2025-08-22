@@ -3,43 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Cordova AI Creatives</title>
-    <!-- Linking to Google Fonts -->
+    <title>Contact Us - Theme Toggled</title>
+    <!-- Inter font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Linking to Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Linking to Tailwind CSS for utility classes -->
+    <!-- Tailwind CSS for utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Linking to our custom CSS and JavaScript files -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Base styles for the dynamic background and typography (Dark theme) */
+        /* Default theme is dark-mode */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url(https://i.postimg.cc/9Q3Rzvb4/generate-a-backgroun.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            transition: background-image 0.5s ease-in-out, color 0.5s ease-in-out;
+            color: #FDEBD0; /* Light cream text for dark theme */
+            min-height: 100vh;
+        }
 
-    <!-- Main Container -->
-    <div id="contact-form-container" class="max-w-4xl mx-auto bg-gray-900 rounded-3xl shadow-2xl p-6 sm:p-12 border border-gray-800 opacity-0 transform translate-y-4 transition-all duration-700 ease-in-out">
-        <!-- Headline Section -->
+        /* SUNNY DAY THEME (applies when body has .sunny-day class) */
+        body.sunny-day {
+            background-image: url(https://i.postimg.cc/d0r0vXfJ/generate-a-background-imag.png);
+            color: #333333; /* Dark gray text for light theme */
+        }
+        
+        /* ---------------------------------------------------- */
+        /* Glassmorphism main container styles */
+        /* ---------------------------------------------------- */
+        .glass-container {
+            backdrop-filter: blur(8px);
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+        }
+
+        /* Light-theme glassmorphism */
+        body.sunny-day .glass-container {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* ---------------------------------------------------- */
+        /* Styles for form inputs and other elements */
+        /* ---------------------------------------------------- */
+        .contact-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            color: #FDEBD0; /* Light text for dark theme */
+            transition: all 0.2s ease-in-out;
+        }
+        .contact-input:focus {
+            border-color: #99CCFF; /* Cool blue focus color for dark theme */
+            outline: none;
+        }
+        .contact-input::placeholder {
+            color: rgba(253, 235, 208, 0.7); /* Lighter placeholder for dark theme */
+        }
+
+        /* Light-theme input styles */
+        body.sunny-day .contact-input {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #333333; /* Dark text for light theme */
+        }
+        body.sunny-day .contact-input:focus {
+            border-color: #FFD700; /* Gold focus color for light theme */
+        }
+        body.sunny-day .contact-input::placeholder {
+            color: rgba(51, 51, 51, 0.7); /* Lighter placeholder for light theme */
+        }
+
+        /* ---------------------------------------------------- */
+        /* Styles for the accordion */
+        /* ---------------------------------------------------- */
+        .accordion-item {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+        }
+        .accordion-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 1.25rem;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #FDEBD0; /* Light text for dark theme */
+            transition: color 0.2s ease-in-out;
+        }
+        .accordion-header:hover {
+            color: #99CCFF;
+        }
+        .accordion-header i {
+            margin-right: 0.75rem;
+            color: #99CCFF; /* Cool blue icon for dark theme */
+            transition: transform 0.2s ease-in-out;
+        }
+        .accordion-content {
+            padding: 0 1.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            color: #E0E0E0; /* Lighter text for dark theme content */
+        }
+        .accordion-content ul {
+            padding: 0.5rem 0 1rem 1.5rem;
+            list-style-type: none;
+        }
+        .accordion-content ul li {
+            padding-left: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .accordion-content ul li::before {
+            content: "•";
+            color: #99CCFF;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Light-theme accordion styles */
+        body.sunny-day .accordion-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        body.sunny-day .accordion-header {
+            color: #333333;
+        }
+        body.sunny-day .accordion-header:hover {
+            color: #FFD700;
+        }
+        body.sunny-day .accordion-header i {
+            color: #FFD700;
+        }
+        body.sunny-day .accordion-content {
+            color: #555555;
+        }
+        body.sunny-day .accordion-content ul li::before {
+            color: #FFD700;
+        }
+
+        /* ---------------------------------------------------- */
+        /* Theme toggle button styles */
+        /* ---------------------------------------------------- */
+        .cta-btn { 
+            background-color: #99CCFF; /* Cool blue for the button */
+            color: #0A192F; /* Deep blue text for contrast */
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        body.sunny-day .cta-btn { 
+            background-color: #FFD700; /* Gold for the button */
+            color: #333333; /* Dark text */
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 relative flex flex-col items-center justify-center">
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-40 cta-btn px-4 py-2 text-sm rounded-full shadow-lg">
+        <!-- Icon that will change dynamically -->
+        <i id="theme-icon" class="fa-solid fa-sun"></i>
+    </button>
+    
+    <!-- Semi-transparent black overlay -->
+    <div class="fixed inset-0 bg-black opacity-20"></div>
+
+    <!-- Main Glassmorphism Container -->
+    <div class="glass-container max-w-4xl w-full mx-auto rounded-3xl p-6 sm:p-12 relative z-10">
         <header class="text-center mb-10">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-current">
                 Let’s Build Something Brilliant Together
             </h1>
-            <p class="mt-4 text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+            <p class="mt-4 text-sm sm:text-base text-current max-w-2xl mx-auto opacity-70">
                 Whether you're ready to launch or just exploring ideas, we’d love to hear from you. Reach out and let’s co-create your next big move.
             </p>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <!-- Services Section -->
             <section id="services" class="lg:order-1">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Our Services</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-current mb-6">Our Services</h2>
                 <div class="accordion-container">
                     <!-- Accordion Item 1 -->
-                    <div class="accordion-item">
+                    <div class="accordion-item rounded-xl">
                         <button class="accordion-header">
                             <i class="fas fa-brain"></i>
                             <h3>AI-Powered Branding & Content Packs</h3>
-                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="accordion-content">
                             <ul>
@@ -50,11 +211,10 @@
                         </div>
                     </div>
                     <!-- Accordion Item 2 -->
-                    <div class="accordion-item">
+                    <div class="accordion-item rounded-xl">
                         <button class="accordion-header">
                             <i class="fas fa-globe"></i>
                             <h3>Web Design & Optimization</h3>
-                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="accordion-content">
                             <ul>
@@ -65,11 +225,10 @@
                         </div>
                     </div>
                     <!-- Accordion Item 3 -->
-                    <div class="accordion-item">
+                    <div class="accordion-item rounded-xl">
                         <button class="accordion-header">
                             <i class="fas fa-robot"></i>
                             <h3>AI Agent Setup & Automation</h3>
-                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="accordion-content">
                             <ul>
@@ -80,11 +239,10 @@
                         </div>
                     </div>
                     <!-- Accordion Item 4 -->
-                    <div class="accordion-item">
+                    <div class="accordion-item rounded-xl">
                         <button class="accordion-header">
                             <i class="fas fa-graduation-cap"></i>
                             <h3>Academic & Organizational Support</h3>
-                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="accordion-content">
                             <ul>
@@ -97,99 +255,161 @@
                 </div>
             </section>
 
-            <!-- Contact Form Section -->
             <div class="lg:order-2">
-                <form id="contact-form" action="https://formspree.io/f/xgvzbbel" method="POST" class="space-y-6">
+                <form action="https://formspree.io/f/xgvzbbel" method="POST" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                        <label for="name" class="block text-sm font-medium text-current">Name</label>
                         <input type="text" name="name" id="name" autocomplete="name" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                        <label for="email" class="block text-sm font-medium text-current">Email</label>
                         <input type="email" name="email" id="email" autocomplete="email" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
                     </div>
                     <div>
-                        <label for="business-name" class="block text-sm font-medium text-gray-300">Business Name</label>
+                        <label for="business-name" class="block text-sm font-medium text-current">Business Name</label>
                         <input type="text" name="business-name" id="business-name" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <label for="message" class="block text-sm font-medium text-current">Message</label>
                         <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or idea..." class="contact-input mt-1 block w-full rounded-lg px-4 py-3"></textarea>
                     </div>
                     <div>
-                        <label for="interest">Service Interest</label>
-                        <select id="interest" name="interest">
-                        <option value="branding">AI-Powered Branding</option>
-                        <option value="web-design">Web Design</option>
-                        <option value="automation">AI Agent & Automation</option>
-                        <option value="support">Academic Support</option>
-                        <option value="consulting">Creative Consulting</option>
-                    </select>
+                        <label for="budget" class="block text-sm font-medium text-current">Budget Range</label>
+                        <select id="budget" name="budget" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
+                            <option>₱500–₱1k</option>
+                            <option>₱2k–₱5k</option>
+                            <option>₱6k–₱10k</option>
+                            <option>₱15k+</option>
+                        </select>
                     </div>
                     <fieldset>
-                        <legend class="text-sm font-medium text-gray-300">Preferred Contact Method</legend>
+                        <legend class="text-sm font-medium text-current">Preferred Contact Method</legend>
                         <div class="mt-2 space-y-2 flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0">
                             <div class="flex items-center">
-                                <input id="contact-email" name="contact-method" type="radio" checked class="h-4 w-4 text-amber-500 border-gray-600 focus:ring-amber-500 bg-gray-700">
-                                <label for="contact-email" class="ml-2 block text-sm text-gray-300">Email</label>
+                                <input id="contact-email" name="contact-method" type="radio" checked class="h-4 w-4 text-current border-gray-600 focus:ring-current bg-gray-700">
+                                <label for="contact-email" class="ml-2 block text-sm text-current">Email</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="contact-phone" name="contact-method" type="radio" class="h-4 w-4 text-amber-500 border-gray-600 focus:ring-amber-500 bg-gray-700">
-                                <label for="contact-phone" class="ml-2 block text-sm text-gray-300">Phone</label>
+                                <input id="contact-phone" name="contact-method" type="radio" class="h-4 w-4 text-current border-gray-600 focus:ring-current bg-gray-700">
+                                <label for="contact-phone" class="ml-2 block text-sm text-current">Phone</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="contact-messenger" name="contact-method" type="radio" class="h-4 w-4 text-amber-500 border-gray-600 focus:ring-amber-500 bg-gray-700">
-                                <label for="contact-messenger" class="ml-2 block text-sm text-gray-300">Messenger</label>
+                                <input id="contact-messenger" name="contact-method" type="radio" class="h-4 w-4 text-current border-gray-600 focus:ring-current bg-gray-700">
+                                <label for="contact-messenger" class="ml-2 block text-sm text-current">Messenger</label>
                             </div>
                         </div>
                     </fieldset>
                     <div class="mt-6">
-                        <button type="submit" id="submit-button" class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all duration-200 transform hover:scale-105">
-                            <span id="button-text">Send Message</span>
+                        <button type="submit" class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-current hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-current transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l.006-.006a1 1 0 00.164-.067l4.945-2.472a.5.5 0 00.294-.445V9.5a1 1 0 012 0v5.882a.5.5 0 00.294.445l4.945 2.472a1 1 0 001.169-1.409l-7-14z"></path></svg>
+                            <span>Send Message</span>
                         </button>
                     </div>
-                    <div id="form-message" class="hidden mt-6 p-4 rounded-lg text-center text-sm sm:text-base shadow-lg transition-opacity duration-300"></div>
+                    <!-- Success/Error Message Box -->
+                    <div id="form-message" class="hidden mt-6 p-4 rounded-lg text-white text-center text-sm sm:text-base shadow-lg transition-opacity duration-300"></div>
                 </form>
             </div>
-
-            <!-- Direct Contact Info Section -->
-            <div class="lg:order-1">
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-white">Direct Contact Info</h3>
-                        <ul class="mt-4 space-y-4 text-base">
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 text-amber-400 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                                <a href="mailto:cordova.creatives@gmail.com" class="hover:underline">cordova.creatives@gmail.com</a>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 text-amber-400 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.096 11.096 0 008.58-8.58l-.774-1.548a1 1 0 01-1.06-.54l-4.435-.74A1 1 0 013 2.153V3z"></path><path d="M12.984 9.18l-1.74-4.435a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.153a1 1 0 01-.986-.836l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.096 11.096 0 00-8.58-8.58z"></path></svg>
-                                <a href="tel:+639171234567" class="hover:underline">+63 917 123 4567</a>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 text-amber-400 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-                                <a href="https://m.me/cordovaai" target="_blank" class="hover:underline">m.me/cordovaai</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="pt-6">
-                        <h3 class="text-xl font-semibold text-white">Location & Availability</h3>
-                        <div class="mt-4 space-y-2 text-base text-gray-400">
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-amber-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
-                                <span>Based in Bacolod, serving businesses across the Philippines</span>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-amber-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.5 2.5a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path></svg>
-                                <span>Available: Mon–Sat, 9AM–6PM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
-    <script src="script.js"></script>
+    
+<script>
+    // Theme toggle logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        const saveThemePreference = (theme) => {
+            localStorage.setItem('theme', theme);
+        };
+
+        const loadThemePreference = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'sunny-day') {
+                body.classList.add('sunny-day');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                body.classList.remove('sunny-day');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        };
+
+        loadThemePreference();
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('sunny-day')) {
+                body.classList.remove('sunny-day');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                saveThemePreference('dark-night');
+            } else {
+                body.classList.add('sunny-day');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                saveThemePreference('sunny-day');
+            }
+        });
+    });
+
+    // Form submission script
+    document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const formMessage = document.getElementById("form-message");
+
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                form.reset();
+                formMessage.textContent = "✅ Message sent successfully! We'll review it and get back to you shortly.";
+                formMessage.classList.remove("hidden", "bg-red-500");
+                formMessage.classList.add("bg-[#FFD700]", "text-[#0A192F]", "opacity-100");
+
+                setTimeout(() => {
+                    formMessage.classList.add("hidden");
+                }, 5000);
+            } else {
+                formMessage.textContent = "Oops! Something went wrong. Please try again.";
+                formMessage.classList.remove("hidden", "bg-[#FFD700]", "text-[#0A192F]");
+                formMessage.classList.add("bg-red-500", "opacity-100");
+            }
+        }).catch(error => {
+            formMessage.textContent = "Error submitting form. Please try again.";
+            formMessage.classList.remove("hidden", "bg-[#FFD700]", "text-[#0A192F]");
+            formMessage.classList.add("bg-red-500", "opacity-100");
+        });
+    });
+
+    // Accordion script
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            const accordionContent = header.nextElementSibling;
+            
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                if (item !== accordionItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-content').style.maxHeight = null;
+                }
+            });
+
+            accordionItem.classList.toggle('active');
+            if (accordionItem.classList.contains('active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+            } else {
+                accordionContent.style.maxHeight = null;
+            }
+        });
+    });
+</script>
 </body>
 </html>
