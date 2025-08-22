@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAiC - Cordova AI Creatives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>CAiC — Service Suite</h1>
+            <p>Empowering Filipino brands and student groups through smart design, automation, and advocacy</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </header>
+
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered Branding & Content Packs</h3>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>🎨 Logos, palettes, font pairings, Canva templates</li>
+                        <li>🧠 Generative AI prompts tailored to brand identity</li>
+                        <li>📦 Social media content packs: captions, hashtags, post designs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <i class="fas fa-globe"></i>
+                    <h3>Web Design & Optimization</h3>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>🌐 Google Sites setup with premium visuals</li>
+                        <li>🧩 Structured sections: About, Services, Portfolio, Testimonials, Contact</li>
+                        <li>📈 CTA buttons, feedback forms, UX enhancements</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Agent Setup & Automation</h3>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>🤖 Chatbot integration (Vertex AI + Cloud Functions)</li>
+                        <li>📲 Social media automation: auto-replies, lead capture</li>
+                        <li>🛠️ Backend troubleshooting and API linking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Academic & Organizational Support</h3>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>📝 Persuasive letters, endorsements, formal requests</li>
+                        <li>📋 List formatting, alphabetizing, document clarity</li>
+                        <li>🎓 Advocacy for academic initiatives</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Creative Consulting & Iteration</h3>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>🔁 Feedback-driven design refinement</li>
+                        <li>🧪 Font experimentation, cultural storytelling</li>
+                        <li>💬 Strategic branding and copywriting advice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <h2>Our Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/1C2A4D/D4AF37?text=Logo+Design" alt="Sample Logo">
+                <div class="overlay">
+                    <span class="view-btn">View Logo</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/F5F0E6/1C2A4D?text=Canva+Template" alt="Canva Template">
+                <div class="overlay">
+                    <span class="view-btn">View Template</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/E8C87C/1C2A4D?text=Chatbot+UI" alt="Chatbot UI">
+                <div class="overlay">
+                    <span class="view-btn">View Demo</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x300/1C2A4D/F5F0E6?text=Google+Site" alt="Google Site">
+                <div class="overlay">
+                    <span class="view-btn">View Site</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="content-wrapper">
+            <div class="testimonials">
+                <h2>Client Success Stories</h2>
+                <div class="testimonial-card">
+                    <p>"CAiC transformed our brand identity. The social media content packs are a game-changer!"</p>
+                    <p class="client-name">— Maria R., Student Organization Leader</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The web design and automation services were seamless. Our new site looks professional and is so easy to manage."</p>
+                    <p class="client-name">— Carlos P., Small Business Owner</p>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <h2>Get in Touch</h2>
+                <form action="#" method="post" class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="interest">Service Interest</label>
+                    <select id="interest" name="interest">
+                        <option value="branding">AI-Powered Branding</option>
+                        <option value="web-design">Web Design</option>
+                        <option value="automation">AI Agent & Automation</option>
+                        <option value="support">Academic Support</option>
+                        <option value="consulting">Creative Consulting</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <div class="cta-and-socials">
+                    <a href="#" class="btn secondary-btn">Request a Free Consultation</a>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Cordova AI Creatives</p>
+            <div class="footer-links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">GitHub Pages Site</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
