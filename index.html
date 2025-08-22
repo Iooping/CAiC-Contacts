@@ -3,183 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAiC - Cordova AI Creatives</title>
+    <title>Contact Us - Cordova AI Creatives</title>
+    <!-- Linking to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Linking to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Linking to Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Linking to our custom CSS and JavaScript files -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>CAiC — Service Suite</h1>
-            <p>Empowering Filipino brands and student groups through smart design, automation, and advocacy</p>
-            <a href="#contact" class="btn">Get Started</a>
-        </div>
-    </header>
+    <!-- Main Container -->
+    <div id="contact-form-container" class="max-w-4xl mx-auto bg-gray-900 rounded-3xl shadow-2xl p-6 sm:p-12 border border-gray-800 opacity-0 transform translate-y-4 transition-all duration-700 ease-in-out">
+        <!-- Headline Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+                Let’s Build Something Brilliant Together
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+                Whether you're ready to launch or just exploring ideas, we’d love to hear from you. Reach out and let’s co-create your next big move.
+            </p>
+        </header>
 
-    <section id="services" class="services-section">
-        <h2>Our Services</h2>
-        <div class="accordion-container">
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI-Powered Branding & Content Packs</h3>
-                </button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>🎨 Logos, palettes, font pairings, Canva templates</li>
-                        <li>🧠 Generative AI prompts tailored to brand identity</li>
-                        <li>📦 Social media content packs: captions, hashtags, post designs</li>
-                    </ul>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Services Section -->
+            <section id="services" class="lg:order-1">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">Our Services</h2>
+                <div class="accordion-container">
+                    <!-- Accordion Item 1 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI-Powered Branding & Content Packs</h3>
+                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>🎨 Logos, palettes, font pairings, Canva templates</li>
+                                <li>🧠 Generative AI prompts tailored to brand identity</li>
+                                <li>📦 Social media content packs: captions, hashtags, post designs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 2 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-globe"></i>
+                            <h3>Web Design & Optimization</h3>
+                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>🌐 Google Sites setup with premium visuals</li>
+                                <li>🧩 Structured sections: About, Services, Portfolio, Testimonials, Contact</li>
+                                <li>📈 CTA buttons, feedback forms, UX enhancements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 3 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI Agent Setup & Automation</h3>
+                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>🤖 Chatbot integration (Vertex AI + Cloud Functions)</li>
+                                <li>📲 Social media automation: auto-replies, lead capture</li>
+                                <li>🛠️ Backend troubleshooting and API linking</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 4 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Academic & Organizational Support</h3>
+                            <span class="ml-auto transform transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>📝 Persuasive letters, endorsements, formal requests</li>
+                                <li>📋 List formatting, alphabetizing, document clarity</li>
+                                <li>🎓 Advocacy for academic initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <i class="fas fa-globe"></i>
-                    <h3>Web Design & Optimization</h3>
-                </button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>🌐 Google Sites setup with premium visuals</li>
-                        <li>🧩 Structured sections: About, Services, Portfolio, Testimonials, Contact</li>
-                        <li>📈 CTA buttons, feedback forms, UX enhancements</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI Agent Setup & Automation</h3>
-                </button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>🤖 Chatbot integration (Vertex AI + Cloud Functions)</li>
-                        <li>📲 Social media automation: auto-replies, lead capture</li>
-                        <li>🛠️ Backend troubleshooting and API linking</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Academic & Organizational Support</h3>
-                </button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>📝 Persuasive letters, endorsements, formal requests</li>
-                        <li>📋 List formatting, alphabetizing, document clarity</li>
-                        <li>🎓 Advocacy for academic initiatives</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Creative Consulting & Iteration</h3>
-                </button>
-                <div class="accordion-content">
-                    <ul>
-                        <li>🔁 Feedback-driven design refinement</li>
-                        <li>🧪 Font experimentation, cultural storytelling</li>
-                        <li>💬 Strategic branding and copywriting advice</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="portfolio" class="portfolio-section">
-        <h2>Our Work</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300/1C2A4D/D4AF37?text=Logo+Design" alt="Sample Logo">
-                <div class="overlay">
-                    <span class="view-btn">View Logo</span>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300/F5F0E6/1C2A4D?text=Canva+Template" alt="Canva Template">
-                <div class="overlay">
-                    <span class="view-btn">View Template</span>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300/E8C87C/1C2A4D?text=Chatbot+UI" alt="Chatbot UI">
-                <div class="overlay">
-                    <span class="view-btn">View Demo</span>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300/1C2A4D/F5F0E6?text=Google+Site" alt="Google Site">
-                <div class="overlay">
-                    <span class="view-btn">View Site</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="content-wrapper">
-            <div class="testimonials">
-                <h2>Client Success Stories</h2>
-                <div class="testimonial-card">
-                    <p>"CAiC transformed our brand identity. The social media content packs are a game-changer!"</p>
-                    <p class="client-name">— Maria R., Student Organization Leader</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The web design and automation services were seamless. Our new site looks professional and is so easy to manage."</p>
-                    <p class="client-name">— Carlos P., Small Business Owner</p>
-                </div>
-            </div>
-            <div class="contact-form-container">
-                <h2>Get in Touch</h2>
-                <form action="#" method="post" class="contact-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="interest">Service Interest</label>
-                    <select id="interest" name="interest">
-                        <option value="branding">AI-Powered Branding</option>
-                        <option value="web-design">Web Design</option>
-                        <option value="automation">AI Agent & Automation</option>
-                        <option value="support">Academic Support</option>
-                        <option value="consulting">Creative Consulting</option>
-                    </select>
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    
-                    <button type="submit" class="btn">Submit</button>
+            <!-- Contact Form Section -->
+            <div class="lg:order-2">
+                <form id="contact-form" action="https://formspree.io/f/xgvzbbel" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                        <input type="text" name="name" id="name" autocomplete="name" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                        <input type="email" name="email" id="email" autocomplete="email" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
+                    </div>
+                    <div>
+                        <label for="business-name" class="block text-sm font-medium text-gray-300">Business Name</label>
+                        <input type="text" name="business-name" id="business-name" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or idea..." class="contact-input mt-1 block w-full rounded-lg px-4 py-3"></textarea>
+                    </div>
+                    <div>
+                        <label for="budget" class="block text-sm font-medium text-gray-300">Budget Range</label>
+                        <select id="budget" name="budget" class="contact-input mt-1 block w-full rounded-lg px-4 py-3">
+                            <option>₱500–₱1k</option>
+                            <option>₱2k–₱5k</option>
+                            <option>₱6k–₱10k</option>
+                            <option>₱15k+</option>
+                        </select>
+                    </div>
+                    <fieldset>
+                        <legend class="text-sm font-medium text-gray-300">Preferred Contact Method</legend>
+                        <div class="mt-2 space-y-2 flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0">
+                            <div class="flex items-center">
+                                <input id="contact-email" name="contact-method" type="radio" checked class="h-4 w-4 text-amber-500 border-gray-600 focus:ring-amber-500 bg-gray-700">
+                                <label for="contact-email" class="ml-2 block text-sm text-gray-300">Email</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="contact-phone" name="contact-method" type="radio" class="h-4 w-4 text-amber-500 border-gray-600 focus:ring-amber-500 bg-gray-700">
+                                <label for="contact-phone" class="ml-2 block text-sm text-gray-300">Phone</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="contact-messenger" name="contact-method" type="radio" class="h-4 w-4 text-amber-500 border-gray-600 focus:ring-amber-500 bg-gray-700">
+                                <label for="contact-messenger" class="ml-2 block text-sm text-gray-300">Messenger</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="mt-6">
+                        <button type="submit" id="submit-button" class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all duration-200 transform hover:scale-105">
+                            <span id="button-text">Send Message</span>
+                        </button>
+                    </div>
+                    <div id="form-message" class="hidden mt-6 p-4 rounded-lg text-center text-sm sm:text-base shadow-lg transition-opacity duration-300"></div>
                 </form>
-                <div class="cta-and-socials">
-                    <a href="#" class="btn secondary-btn">Request a Free Consultation</a>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Direct Contact Info Section -->
+            <div class="lg:order-1">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-white">Direct Contact Info</h3>
+                        <ul class="mt-4 space-y-4 text-base">
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-amber-400 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                                <a href="mailto:cordova.creatives@gmail.com" class="hover:underline">cordova.creatives@gmail.com</a>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-amber-400 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.096 11.096 0 008.58-8.58l-.774-1.548a1 1 0 01-1.06-.54l-4.435-.74A1 1 0 013 2.153V3z"></path><path d="M12.984 9.18l-1.74-4.435a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.153a1 1 0 01-.986-.836l-.74-4.435a1 1 0 01.54-1.06l1.548-.774a11.096 11.096 0 00-8.58-8.58z"></path></svg>
+                                <a href="tel:+639171234567" class="hover:underline">+63 917 123 4567</a>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-amber-400 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <a href="https://m.me/cordovaai" target="_blank" class="hover:underline">m.me/cordovaai</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6">
+                        <h3 class="text-xl font-semibold text-white">Location & Availability</h3>
+                        <div class="mt-4 space-y-2 text-base text-gray-400">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-amber-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                                <span>Based in Bacolod, serving businesses across the Philippines</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-amber-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.5 2.5a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                                <span>Available: Mon–Sat, 9AM–6PM</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Cordova AI Creatives</p>
-            <div class="footer-links">
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">GitHub Pages Site</a>
-            </div>
-        </div>
-    </footer>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
